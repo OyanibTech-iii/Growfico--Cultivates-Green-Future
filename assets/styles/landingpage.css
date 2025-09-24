@@ -27,12 +27,17 @@
 
 .nav-links li:hover {
     background: var(--color-light-gray);
-    color: #fff;
+    color: var(--color-background);
 }
 
 .nav-icon ion-icon {
-    font-size: 0.75rem;
+    font-size: 1rem;
     color: inherit;
+}
+
+.log-icon ion-icon {
+    font-size: 1rem !important;
+    color: var(--color-dark-forest-green)!important;
 }
 
 .nav-title {
@@ -41,7 +46,7 @@
 }
 
 .logo-image {
-    height: 28px;
+    height: 52px;
     width: auto;
     display: block;
 }
@@ -83,4 +88,8 @@
 
 .RegisterBtn:hover {
     background: var(--color-dark-forest-green);
+}
+
+a{
+    text-decoration: none;
 }
