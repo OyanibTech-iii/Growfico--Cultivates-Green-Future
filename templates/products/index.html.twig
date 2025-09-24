@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Products | Growfico{% endblock %}
+
+{% block body %}
+{# <link rel="stylesheet" href="{{asset('styles/products.css')}}"> #}
+<link rel="stylesheet" href="{{ asset('styles/dashboard.css') }}">
+
+<link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<div class="dashboard-container">
+    <div class="sidebar">
+        <div class="logo">
+            <img class="logo-image primary" src="{{ asset('logos/white-Text -Primary.png') }}" alt="Growfico" />
+        </div>
+        
+        <nav>
+            <div class="nav-section">
+                <a href="#" class="nav-item active">
+                    <ion-icon class="icon" name="grid-outline"></ion-icon>
+                    Dashboard
+                </a>
+                <a href="#" class="nav-item">
+                    <ion-icon class="icon" name="people-outline"></ion-icon>
+                    Team
+                </a>
+                <a href="#" class="nav-item">
+                    <ion-icon class="icon" name="folder-open-outline"></ion-icon>
+                    Projects
+                </a>
+                <a href="#" class="nav-item">
+                    <ion-icon class="icon" name="calendar-outline"></ion-icon>
+                    Calendar
+                </a>
+                <a href="#" class="nav-item">
+                    <ion-icon class="icon" name="document-text-outline"></ion-icon>
+                    Documents
+                </a>
+                <a href="#" class="nav-item">
+                    <ion-icon class="icon" name="stats-chart-outline"></ion-icon>
+                    Reports
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <h3>Your Teams</h3>
+                <a href="#" class="nav-item">
+                    <ion-icon class="icon" name="briefcase-outline"></ion-icon>
+                    Operations Manager
+                </a>
+                <a href="#" class="nav-item">
+                    <ion-icon class="icon" name="hardware-chip-outline"></ion-icon>
+                    IT Manager / CTO
+                </a>
+                <a href="#" class="nav-item">
+                    <ion-icon class="icon" name="school-outline"></ion-icon>
+                    Training Director
+                </a>
+            </div>
+        </nav>
+
+        <div class="user-profile">
+            <div class="user-info">
+                <div class="user-avatar">A</div>
+                <div class="user-details">
+                    <div class="user-name">ADMINISTRATOR</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="content-area">
+            <div class="content-placeholder">
+                <h2>Welcome to Products Dashboard</h2>
+                <h3>Bento Grid rani nako dre</h3>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

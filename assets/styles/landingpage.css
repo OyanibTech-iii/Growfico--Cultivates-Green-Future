@@ -1,0 +1,86 @@
+/* Navbar styles for landing page only */
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    background: var(--color-background);
+    padding: 1rem 2rem;
+    margin-top: 0.1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(3, 166, 74, 0.07), 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-dark-forest-green);
+    cursor: pointer;
+    transition: color 0.2s, background 0.2s;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border-radius: 4px;
+}
+
+.nav-links li:hover {
+    background: var(--color-light-gray);
+    color: #fff;
+}
+
+.nav-icon ion-icon {
+    font-size: 0.75rem;
+    color: inherit;
+}
+
+.nav-title {
+    font-weight: 500;
+    font-size: 0.75rem;
+}
+
+.logo-image {
+    height: 28px;
+    width: auto;
+    display: block;
+}
+
+.login-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 1rem;
+}
+
+.LoginBtn {
+    font-size: 0.75rem;
+    color: var(--color-dark-forest-green);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+
+.RegisterBtn {
+    background: var(--color-bright-green);
+    color: var(--color-background) ;
+    font-size: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.LoginBtn:hover {
+    background: var(--color-dark-forest-green);
+    color: var(--color-background);
+}
+
+.RegisterBtn:hover {
+    background: var(--color-dark-forest-green);
+}

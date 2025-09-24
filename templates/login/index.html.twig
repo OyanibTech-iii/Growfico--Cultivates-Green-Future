@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in | Growfico{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+<link rel="stylesheet" href="{{ asset('styles/signup.css') }}">
+
+<div class="container">
+    <div class="left-panel">
+        <img class="logo-image" src="{{ asset('logos/white-Text -Primary.png') }}" alt="Growfico" />
+        <div class="text">Cultivating Green Futures</div>
+        <p class="subtitle">Nurture your garden and track your growth journey with Growfico.</p>
+    </div>
+
+    <div class="right-panel">
+        <h2 class="signup-header">Log in</h2>
+        <p class="account-info">Don't have an account?
+            <a href="{{ path('app_signup') }}">Create one</a>
+        </p>
+
+        <form method="post" accept-charset="UTF-8">
+            <input type="hidden" name="action" value="users/login">
+
+            <div class="input-group">
+                <label for="loginMail" class="account-info">Email</label>
+                <input id="loginMail" class="input-field" type="email" name="loginName" required>
+            </div>
+
+            <div class="input-group password-container">
+                <label for="password" class="account-info">Password</label>
+                <input id="password" class="input-field" type="password" name="password" required minlength="8">
+            </div>
+
+            <div class="custom-checkbox">
+                <input id="rememberMe" type="checkbox" name="rememberMe" value="1">
+                <label for="rememberMe">
+                    <span class="checkbox-icon"></span>
+                    <span class="checkbox-text">Remember me</span>
+                </label>
+            </div>
+
+            <button type="submit" class="signup-btn">Sign in</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

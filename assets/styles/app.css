@@ -1,0 +1,25 @@
+:root {
+    --color-dark-forest-green: #094021;
+    --color-bright-green: #03A64A;
+    --color-light-gray: #6A7F74;
+    --color-background: #F7FAFC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+} 
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-dark-forest-green);
+    font-size: 0.75rem;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: var(--color-dark-forest-green);
+    font-weight: 600;
+    font-size: 1rem;
+}

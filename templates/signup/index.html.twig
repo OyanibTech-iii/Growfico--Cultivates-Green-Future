@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sign up | Growfico{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('styles/signup.css') }}">
+
+<div class="container">
+    <img class="logo-image" src="{{ asset('logos/white-Text -Primary.png') }}" alt="Growfico" />
+    <div class="right-panel">
+        <h2 class="signup-header">Create your account</h2>
+        <p class="account-info">Already have an account?
+            <a href="{{ path('app_login') }}">Log in</a>
+        </p>
+
+        <form method="post" accept-charset="UTF-8">
+            <input type="hidden" name="action" value="users/signup">
+
+            <div class="input-group">
+                <label for="fullName" class="account-info">Full name</label>
+                <input id="fullName" class="input-field" type="text" name="fullName" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email" class="account-info">Email address</label>
+                <input id="email" class="input-field" type="email" name="email" required>
+            </div>
+
+            <div class="input-group password-container">
+                <label for="password" class="account-info">Password</label>
+                <input id="password" class="input-field" type="password" name="password" required minlength="8">
+            </div>
+
+            <div class="input-group password-container">
+                <label for="confirmPassword" class="account-info">Confirm password</label>
+                <input id="confirmPassword" class="input-field" type="password" name="confirmPassword" required minlength="8">
+            </div>
+
+            <div class="custom-checkbox">
+                <input id="terms" type="checkbox" name="terms" required>
+                <label for="terms">
+                    <span class="checkbox-icon"></span>
+                    <span class="checkbox-text">I agree to the
+                        <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+                    </span>
+                </label>
+            </div>
+
+            <button type="submit" class="signup-btn">Create Account</button>
+        </form>
+    </div>
+
+    <div class="left-panel">
+        <div class="text">Cultivating Green Futures</div>
+        <p class="subtitle">Nurture your garden and track your growth journey with Growfico.</p>
+    </div>
+</div{% endblock %}

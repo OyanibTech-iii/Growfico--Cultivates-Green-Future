@@ -1,0 +1,10 @@
+.main-content{
+    display: grid;
+    text-align:center;
+    justify-content: center;
+    border:1px solid var(--color-dark-forest-green);
+    height: 50%;
+    border-radius: 12px;
+    width: 50%;
+    margin-left: 25%;
+}

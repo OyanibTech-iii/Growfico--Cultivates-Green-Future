@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Growfico | Cultivates Green Future{% endblock %}
+     {% block stylesheets %} 
+            <link rel="stylesheet" href = "{{asset('styles/app.css')}}">
+            <link rel="stylesheet" href = "{{asset('styles/landingpage.css')}}">
+            {% endblock %}
+{% block body %}
+
+<ul class="nav-links" id="navLinks">
+                    <img class="logo-image primary" src="{{ asset('logos/white-Text -Primary.png') }}" alt="Growfico" />
+      <li >
+        <span class="nav-icon"><ion-icon name="home-outline"></ion-icon></span>
+        <span class="nav-title">Home</span>
+      </li>
+      <li >
+        <span class="nav-icon"><ion-icon name="people-outline"></ion-icon></span>
+        <span class="nav-title">About Us</span>
+      </li>
+      <li >
+        <span class="nav-icon"><ion-icon name="call-outline"></ion-icon></span>
+        <span class="nav-title">Contacts</span>
+      </li>
+      <li >
+        <span class="nav-icon"><ion-icon name="restaurant-outline"></ion-icon></span>
+        <span class="nav-title">Products</span>
+      </li>
+      <div class="login-container">
+        <button class="LoginBtn">LOGIN</button>
+        <button class="RegisterBtn">REGISTER</button>
+      </div>
+    </ul>
+      
+      
+  
+{% endblock %}
