@@ -1,23 +1,36 @@
-
-<footer class="modern-footer">
-	<div class="footer-content">
-		<div class="footer-brand">
-			<img src="{{ asset('logos/white-Text -Primary.png') }}" alt="Growfico" class="footer-logo" />
-			<span class="footer-title">Growfico</span>
-		</div>
-		<div class="footer-social">
-			<a href="#" title="Facebook" class="footer-icon"><ion-icon name="logo-facebook"></ion-icon></a>
-			<a href="#" title="Instagram" class="footer-icon"><ion-icon name="logo-instagram"></ion-icon></a>
-			<a href="#" title="Twitter" class="footer-icon"><ion-icon name="logo-twitter"></ion-icon></a>
-			<a href="#" title="Mail" class="footer-icon"><ion-icon name="mail-outline"></ion-icon></a>
-		</div>
-		<div class="footer-links">
-			<a href="#" class="footer-link">Privacy Policy</a>
-			<a href="#" class="footer-link">Terms of Service</a>
-			<a href="#" class="footer-link">Contact</a>
-		</div>
-	</div>
-	<div class="footer-bottom">
-		<span>&copy; {{ "now"|date("Y") }} Growfico. All rights reserved.</span>
-	</div>
-</footer>
+ <footer class="bg-dark-forest-green text-white px-4 py-8 pt-8 mt-8">
+        <div class="flex flex-wrap items-center justify-between gap-8 max-w-6xl mx-auto">
+            <!-- Brand Section -->
+            <div class="flex items-center gap-3">
+                <img src="{{ asset('logos/No-tagline.png') }}" alt="Growfico" style="height: 2.5rem; width: auto;"/>
+            </div>
+            
+            <!-- Social Icons -->
+            <div class="flex gap-2">
+                <a href="#" title="Facebook" class="text-background text-base transition-colors duration-200 hover:text-light-gray">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+                <a href="#" title="Instagram" class="text-background text-base transition-colors duration-200 hover:text-light-gray">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+                <a href="#" title="Twitter" class="text-background text-base transition-colors duration-200 hover:text-light-gray">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+                <a href="#" title="Mail" class="text-background text-base transition-colors duration-200 hover:text-light-gray">
+                    <ion-icon name="mail-outline"></ion-icon>
+                </a>
+            </div>
+            
+            <!-- Footer Links -->
+            <div class="flex gap-4">
+                <a href="#" class="text-white no-underline text-xs transition-colors duration-200 hover:text-bright-green">Privacy Policy</a>
+                <a href="#" class="text-white no-underline text-xs transition-colors duration-200 hover:text-bright-green">Terms of Service</a>
+                <a href="#" class="text-white no-underline text-xs transition-colors duration-200 hover:text-bright-green">Contact</a>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="text-center mt-4 text-light-gray text-xs">
+            <span>&copy; 2025 Growfico. All rights reserved.</span>
+        </div>
+    </footer>

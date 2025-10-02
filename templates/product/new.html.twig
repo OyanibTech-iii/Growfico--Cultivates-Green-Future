@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add New Product - Growfico{% endblock %}
+
+{% block body %}
+<div class="min-h-screen bg-background">
+    <!-- Header Section -->
+    <div class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                    <nav class="flex items-center space-x-2 text-sm text-light-gray mb-2">
+                        <a href="{{ path('app_product_index') }}" class="hover:text-bright-green transition-colors">Products</a>
+                        <ion-icon name="chevron-forward" class="w-4 h-4"></ion-icon>
+                        <span class="text-dark-forest-green">Add New Product</span>
+                    </nav>
+                    <h1 class="text-heading font-bold text-dark-forest-green font-sans">Add New Product</h1>
+                    <p class="mt-2 text-light-gray text-base">Create a new product to add to your inventory</p>
+                </div>
+                <div class="mt-4 sm:mt-0">
+                    <a href="{{ path('app_product_index') }}" 
+                       class="inline-flex items-center px-4 py-2 bg-gray-100 text-dark-forest-green font-semibold rounded-lg hover:bg-gray-200 transition-colors duration-200">
+                        <ion-icon name="arrow-back-outline" class="w-4 h-4 mr-2"></ion-icon>
+                        Back to Products
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {{ include('product/_form.html.twig') }}
+    </div>
+</div>
+{% endblock %}

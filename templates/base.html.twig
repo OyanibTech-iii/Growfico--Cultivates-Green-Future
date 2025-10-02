@@ -1,24 +1,29 @@
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="UTF-8">
-            <title>{% block title %}Growfico | Cultivating Green Future{% endblock %}</title>
-        <link rel="icon" href="{{asset('favicon.ico')}}">
-            {% block stylesheets %}
-            <link rel="stylesheet" href = "{{asset('styles/app.css')}}">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Growfico | Cultivating Green Future
+			{% endblock %}
+		</title>
+		<link rel="icon" href="{{asset('favicon.ico')}}">
+ {% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+{% endblock %}
 
-            {% endblock %}
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+			<!-- Ionicons CDN import for icons -->
+			<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+			<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+		{% endblock %}
+	</head>
+	<body>
+		{% block body %}
 
-            {% block javascripts %}
-                {% block importmap %}{{ importmap('app') }}{% endblock %}
-                <!-- Ionicons CDN import for icons -->
-                <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-                <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-            {% endblock %}
-        </head>
-        <body>
-            {% block body %}
-
-            {% endblock %}
-        </body>
-    </html>
+		{% endblock %}
+	</body>
+</html>

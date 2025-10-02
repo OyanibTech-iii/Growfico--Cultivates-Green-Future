@@ -1,0 +1,124 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Products - Growfico{% endblock %}
+
+{% block body %}
+<div class="min-h-screen bg-background">
+    <!-- Header Section -->
+    <div class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                    <h1 class="text-heading font-bold text-dark-forest-green font-sans">Our Products</h1>
+                    <p class="mt-2 text-light-gray text-base">Discover our premium selection of plants and gardening supplies</p>
+                </div>
+                <div class="mt-4 sm:mt-0">
+                    <a href="{{ path('app_product_new') }}" 
+                       class="inline-flex items-center px-6 py-3 bg-bright-green text-white font-semibold rounded-lg hover:bg-green-600 transition-colors duration-200 shadow-md hover:shadow-lg">
+                        <ion-icon name="add-circle-outline" class="w-5 h-5 mr-2"></ion-icon>
+                        Add New Product
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {% if products is not empty %}
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {% for product in products %}
+                    <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 group">
+                        <!-- Product Image Placeholder -->
+                        <div class="h-48 bg-gradient-to-br from-bright-green/10 to-dark-forest-green/10 flex items-center justify-center">
+                            <ion-icon name="leaf-outline" class="w-16 h-16 text-bright-green"></ion-icon>
+                        </div>
+                        
+                        <!-- Product Info -->
+                        <div class="p-6">
+                            <div class="flex items-start justify-between mb-3">
+                                <h3 class="text-heading font-semibold text-dark-forest-green font-sans line-clamp-2 group-hover:text-bright-green transition-colors">
+                                    {{ product.name }}
+                                </h3>
+                                <span class="flex-shrink-0 ml-2">
+                                    {% if product.isAvailable %}
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                            <ion-icon name="checkmark-circle" class="w-3 h-3 mr-1"></ion-icon>
+                                            Available
+                                        </span>
+                                    {% else %}
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                            <ion-icon name="close-circle" class="w-3 h-3 mr-1"></ion-icon>
+                                            Out of Stock
+                                        </span>
+                                    {% endif %}
+                                </span>
+                            </div>
+                            
+                            <p class="text-light-gray text-base mb-4 line-clamp-3 leading-relaxed">
+                                {{ product.description }}
+                            </p>
+                            
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="text-heading font-bold text-dark-forest-green">
+                                    ₱{{ product.price }}
+                                </div>
+                                <div class="text-base text-light-gray">
+                                    Stock: {{ product.stock }}
+                                </div>
+                            </div>
+                            
+                            <!-- Action Buttons -->
+                            <div class="flex space-x-2">
+                                <a href="{{ path('app_product_show', {'id': product.id}) }}" 
+                                   class="flex-1 inline-flex items-center justify-center px-4 py-2 bg-gray-100 text-dark-forest-green font-medium rounded-lg hover:bg-gray-200 transition-colors duration-200 text-base">
+                                    <ion-icon name="eye-outline" class="w-4 h-4 mr-2"></ion-icon>
+                                    View
+                                </a>
+                                <a href="{{ path('app_product_edit', {'id': product.id}) }}" 
+                                   class="flex-1 inline-flex items-center justify-center px-4 py-2 bg-bright-green text-white font-medium rounded-lg hover:bg-green-600 transition-colors duration-200 text-base">
+                                    <ion-icon name="create-outline" class="w-4 h-4 mr-2"></ion-icon>
+                                    Edit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <!-- Empty State -->
+            <div class="text-center py-16">
+                <div class="mx-auto w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-6">
+                    <ion-icon name="leaf-outline" class="w-12 h-12 text-light-gray"></ion-icon>
+                </div>
+                <h3 class="text-heading font-semibold text-dark-forest-green mb-2">No products found</h3>
+                <p class="text-light-gray text-base mb-8 max-w-md mx-auto">
+                    Get started by adding your first product to showcase your amazing plants and gardening supplies.
+                </p>
+                <a href="{{ path('app_product_new') }}" 
+                   class="inline-flex items-center px-6 py-3 bg-bright-green text-white font-semibold rounded-lg hover:bg-green-600 transition-colors duration-200 shadow-md hover:shadow-lg">
+                    <ion-icon name="add-circle-outline" class="w-5 h-5 mr-2"></ion-icon>
+                    Add Your First Product
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Custom styles for line-clamp -->
+<style>
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+</style>
+{% endblock %}

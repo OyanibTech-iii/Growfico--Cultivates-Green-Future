@@ -1,0 +1,9 @@
+.typography {
+  font-size: var(--text-base);
+  color: var(--color-gray-700);
+}
+.typography h1, .typography h2, .typography h3, .typography h4, .typography h5, .typography h6 {
+  font-family: var(--font-heading);
+  color: var(--color-dark-forest-green);
+  margin-bottom: 0.5rem;
+}

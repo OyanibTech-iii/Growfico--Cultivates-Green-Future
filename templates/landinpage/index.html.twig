@@ -1,45 +1,141 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Growfico | Cultivates Green Future{% endblock %}
-     {% block stylesheets %} 
-            <link rel="stylesheet" href = "{{asset('styles/app.css')}}">
-            <link rel="stylesheet" href = "{{asset('styles/landingpage.css')}}">
-            <link rel="stylesheet" href="{{ asset('styles/footer.css') }}">
-            {% endblock %}
+{% block title %}Growfico | Cultivates Green Future
+{% endblock %}
 {% block body %}
 
+	<!-- Navigation Bar -->
+	<nav class="w-full px-4 py-2">
+		<ul
+			class="flex flex-row items-center justify-center gap-16 list-none bg-white p-4 mt-0.5 rounded-lg shadow-[0_4px_16px_rgba(3,166,74,0.07),0_2px_8px_rgba(0,0,0,0.03)] w-full">
+			<!-- Logo -->
+			<li class="flex-shrink-0">
+				<img src="{{ asset('logos/No-tagline.png') }}" alt="Growfico" style="height: 2rem; width: auto;"/>
+			</li>
 
-<ul class="nav-links" id="navLinks">
-  <img class="logo-image primary" src="{{ asset('logos/white-Text -Primary.png') }}" alt="Growfico" />
-  <li>
-    <a href="{{ path('app_homepage') }}" style="display: flex; align-items: center; gap: 0.5rem; color: inherit; text-decoration: none;">
-      <span class="nav-icon"><ion-icon name="home-outline"></ion-icon></span>
-      <span class="nav-title">Home</span>
-    </a>
-  </li>
-  <li >
-    <span class="nav-icon"><ion-icon name="people-outline"></ion-icon></span>
-    <span class="nav-title">About Us</span>
-  </li>
-  <li >
-    <span class="nav-icon"><ion-icon name="call-outline"></ion-icon></span>
-    <span class="nav-title">Contacts</span>
-  </li>
-  <li >
-    <span class="nav-icon"><ion-icon name="restaurant-outline"></ion-icon></span>
-    <span class="nav-title">Products</span>
-  </li>
-  <div class="login-container">
-    <a class="LoginBtn" href="{{ path('app_login') }}">LOGIN</a>
-    <a class="RegisterBtn" href="{{ path('app_signup') }}">REGISTER</a>
-  </div>
-</ul>
+			<li class="relative flex items-center gap-2 text-dark-forest-green cursor-pointer transition-all duration-200 py-2 px-4 group">
+				<a href="#" class="flex items-center gap-2 no-underline relative">
+					<span class="nav-icon">
+						<ion-icon name="home-outline" class="text-base text-dark-forest-green"></ion-icon>
+					</span>
+					<span class="font-medium text-xs">Home</span>
+					<!-- Underline -->
+					<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-full h-[2px] bg-bright-green transition-all duration-300"></span>
+				</a>
+			</li>
 
-<main id="main-content">
-  {% include 'homepage/index.html.twig' %}
-</main>
+			<!-- About Us -->
+			<li class="relative flex items-center gap-2 text-dark-forest-green cursor-pointer transition-all duration-200 py-2 px-4 group">
+				<a href="#" class="flex items-center gap-2 no-underline relative">
+					<span class="nav-icon">
+						<ion-icon name="people-outline" class="text-base text-dark-forest-green"></ion-icon>
+					</span>
+					<span class="font-medium text-xs">About Us</span>
+					<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-full h-[2px] bg-bright-green transition-all duration-300"></span>
+				</a>
+			</li>
 
-      
-      {% include 'footer/index.html.twig' %}
-  
+			<!-- Contacts -->
+			<li class="relative flex items-center gap-2 text-dark-forest-green cursor-pointer transition-all duration-200 py-2 px-4 group">
+				<a href="#" class="flex items-center gap-2 no-underline relative">
+					<span class="nav-icon">
+						<ion-icon name="call-outline" class="text-base text-dark-forest-green"></ion-icon>
+					</span>
+					<span class="font-medium text-xs">Contacts</span>
+					<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-full h-[2px] bg-bright-green transition-all duration-300"></span>
+				</a>
+			</li>
+
+			<!-- Products Link -->
+			<li class="relative flex items-center gap-2 text-dark-forest-green cursor-pointer transition-all duration-200 py-2 px-4 group">
+				<a href="#" class="flex items-center gap-2 no-underline relative">
+					<span class="nav-icon">
+						<ion-icon name="restaurant-outline" class="text-base text-dark-forest-green"></ion-icon>
+					</span>
+					<span class="font-medium text-xs">Products</span>
+					<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-full h-[2px] bg-bright-green transition-all duration-300"></span>
+				</a>
+			</li>
+
+			<!-- Login Container -->
+			<li
+				class="flex gap-2 ml-4 flex-shrink-0">
+				<a href="{{ path('app_login') }}" class="relative ml-10 text-sm text-dark-forest-green border-2 border-light-green rounded-md py-2 px-5 font-medium cursor-pointer
+												            transition-all duration-300 ease-in-out
+												            hover:bg-dark-forest-green hover:text-background hover:shadow-lg hover:-translate-y-0.5">
+					LOGIN
+				</a>
+				<a href="{{ path('app_signup') }}" class="relative bg-bright-green text-white text-sm border-2 border-bright-green rounded-md py-2 px-5 font-medium cursor-pointer
+												            transition-all duration-300 ease-in-out
+												            hover:bg-dark-forest-green hover:text-bright-green hover:border-dark-forest-green hover:shadow-lg hover:-translate-y-0.5">
+					REGISTER
+				</a>
+			</li>
+		</ul>
+	</nav>
+
+	<!-- Hero Section -->
+	<main class="max-w-7xl mx-auto px-4 py-12">
+		<div
+			class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+			<!-- Left Column - Text Content -->
+			<div class="space-y-6">
+				<h1 class="text-4xl lg:text-4xl font-bold leading-tight">
+					<span class="text-dark-forest-green">Cultivate
+					</span>
+					<span class="text-bright-green">Thriving</span>
+					<br>
+					<span class="text-bright-green">Gardens
+					</span>
+					<span class="text-dark-forest-green">with Expert</span>
+					<br>
+					<span class="text-dark-forest-green">Guidance</span>
+				</h1>
+
+				<p class="text-base text-light-gray leading-relaxed max-w-lg">
+					Transform your space into a productive paradise. Learn essential growing techniques like grafting, air layering, and budding while getting premium seedlings and fresh fruits. Perfect for beginners and experienced growers alike.
+				</p>
+
+				<button
+					class="flex items-center gap-2 bg-transparent border-2 border-bright-green text-bright-green px-6 py-3 rounded-lg font-medium
+						         transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-bright-green hover:text-background group shadow-sm hover:shadow-md">
+					<ion-icon name="leaf-outline" class="text-bright-green group-hover:text-background transition-colors duration-300" style="font-size:1.3rem;"></ion-icon>
+					<span class="transition-colors duration-300">Learn Our Methods</span>
+					<span class="transform group-hover:translate-x-2 transition-transform duration-300">→</span>
+				</button>
+
+
+				<!-- Stats -->
+				<div class="flex gap-12 pt-8">
+					<div>
+						<div class="text-3xl font-bold text-bright-green">500+</div>
+						<div class="text-sm text-gray-600">Gardens Transformed</div>
+					</div>
+					<div>
+						<div class="text-3xl font-bold text-bright-green">15+</div>
+						<div class="text-sm text-gray-600">Growing Techniques</div>
+					</div>
+					<div>
+						<div class="text-3xl font-bold text-bright-green">98%</div>
+						<div class="text-sm text-gray-600">Success Rate</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Right Column - Image -->
+			<div class="relative">
+				<div class="rounded-2xl overflow-hidden shadow-xl">
+					<img src="{{ asset('banners/banner1.png') }}" alt="Banner "/>
+
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<main
+		id="main-content">{# {% include 'homepage/index.html.twig' %} #}
+	</main>
+
+	{% include 'footer/index.html.twig' %}
+	<script src="{{ asset('navlinks.js') }}"></script>
 {% endblock %}

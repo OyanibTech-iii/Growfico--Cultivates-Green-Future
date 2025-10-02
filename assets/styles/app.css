@@ -1,27 +1,9 @@
+@import "tailwindcss";
+@source not "../../public";
 
+@import "./signuptail.css";
+@import "./typography.css";
 
-:root {
-    --color-dark-forest-green: #094021;
-    --color-bright-green: #03A64A;
-    --color-light-gray: #6A7F74;
-    --color-background: #F7FAFC;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-} 
-
-body {
-    background-color: var(--color-background);
-    color: var(--color-dark-forest-green);
-    font-size: 0.75rem;
-}
-
-h1,h2,h3,h4,h5,h6 {
-    color: var(--color-dark-forest-green);
-    font-weight: 600;
-    font-size: 1rem;
-}
+/* Custom CSS if needed */

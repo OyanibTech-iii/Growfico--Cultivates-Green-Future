@@ -1,58 +1,145 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Sign up | Growfico{% endblock %}
+{% block title %}Sign up | Growfico
+{% endblock %}
 
 {% block body %}
-<link rel="stylesheet" href="{{ asset('styles/signup.css') }}">
 
-<div class="container">
-    <img class="logo-image" src="{{ asset('logos/white-Text -Primary.png') }}" alt="Growfico" />
-    <div class="right-panel">
-    <a href="{{ path('app_landinpage') }}" class="log-icon"><ion-icon name="home-outline"></ion-icon></a>
-        <h2 class="signup-header">Create your account</h2>
-        <p class="account-info">Already have an account?
-            <a href="{{ path('app_login') }}">Log in</a>
-        </p>
+	<div class="flex items-center justify-center min-h-screen bg-gray-100 overflow-hidden">
+		<div class="bg-bg-custom flex items-center justify-center w-[800px] max-h-screen">
+			<div
+				class="flex max-w-2xl w-full bg-white rounded-2xl shadow-xl overflow-hidden">
 
-        <form method="post" accept-charset="UTF-8">
-            <input type="hidden" name="action" value="users/signup">
+				<!-- Left side - Hero Section -->
+				<div
+					class="flex-1 text-white p-12 flex flex-col justify-center relative
+																													bg-[linear-gradient(rgba(9,64,33,0.85),rgba(9,64,33,0.85)),url('../gardens/garden3.png')]
+																									                bg-cover bg-center rounded-l-2xl">
 
-            <div class="input-group">
-                <label for="fullName" class="account-info">Full name</label>
-                <input id="fullName" class="input-field" type="text" name="fullName" required>
-            </div>
+					<!-- Background pattern overlay -->
+					<div class="absolute left-7 top-3 h-9 w-auto z-20">
+						<img src="{{ asset('logos/No-tagline.png') }}" alt="Growfico" style="height: 2rem; width: auto;"/>
+					</div>
 
-            <div class="input-group">
-                <label for="email" class="account-info">Email address</label>
-                <input id="email" class="input-field" type="email" name="email" required>
-            </div>
+					<div class="relative z-10">
+						<div class="mb-8">
+							<h2 class="text-4xl font-bold mb-6 leading-tight">
+								Cultivating<br>
+								Green<br>
+								Futures
+							</h2>
+							<p class="text-lg opacity-90">
+								Nurture your garden and track your<br>
+								growth journey with Growfico.
+							</p>
+						</div>
+					</div>
+				</div>
 
-            <div class="input-group password-container">
-                <label for="password" class="account-info">Password</label>
-                <input id="password" class="input-field" type="password" name="password" required minlength="8">
-            </div>
+				<!-- Right side - Form Section -->
+				<div class="flex-1 p-12 flex flex-col justify-center">
+					<div class="max-w-lg mx-auto w-full">
+						<h2 class="text-xl font-sans font-bold text-dark-forest-green mb-2">Create your account</h2>
+						<p class="font-sans text-sm text-light-gray mb-2">
+							Already have an account?
+							<a href="{{ path('app_login') }}" class="text-bright-green font-sm hover:underline">Log in</a>
+						</p>
 
-            <div class="input-group password-container">
-                <label for="confirmPassword" class="account-info">Confirm password</label>
-                <input id="confirmPassword" class="input-field" type="password" name="confirmPassword" required minlength="8">
-            </div>
+						<form class="space-y-1 py-3">
+							<div>
+								<label class="block text-gray-700 text-sm font-medium">Full name</label>
+								<input type="text" class="w-full py-1 px-0  border-0 border-b-2 border-gray-200 focus:border-bright-green focus:outline-none transition-colors duration-200 bg-transparent" placeholder="">
+							</div>
 
-            <div class="custom-checkbox">
-                <input id="terms" type="checkbox" name="terms" required>
-                <label for="terms">
-                    <span class="checkbox-icon"></span>
-                    <span class="checkbox-text">I agree to the
-                        <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
-                    </span>
-                </label>
-            </div>
+							<div>
+								<label class="block text-gray-700 text-sm font-medium mb-0">Email address</label>
+								<input type="email" class="w-full px-0 py-1 border-0 border-b-2 border-gray-200 focus:border-bright-green focus:outline-none transition-colors duration-200 bg-transparent" placeholder="">
+							</div>
 
-            <button type="submit" class="signup-btn">Create Account</button>
-        </form>
-    </div>
+							<div class="relative">
+								<label class="block text-gray-700 text-sm font-medium mb-0">Password</label>
+								<input
+								type="password" id="password" class="w-full px-0 py-1 border-0 border-b-2 border-gray-200 focus:border-bright-green focus:outline-none transition-colors duration-200 bg-transparent pr-8" placeholder="">
+								<!-- Eye Icon -->
+								<button
+									type="button" onclick="togglePassword('password')" class="absolute right-0 top-5 text-dark-forest-green hover:text-bright-green focus:outline-none">
+									<!-- Default: eye closed -->
+									<svg id="password-eye" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0
+																																																		           8.268 2.943 9.542 7-1.274 4.057-5.065
+																																																		           7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+									</svg>
+								</button>
+							</div>
 
-    <div class="left-panel">
-        <div class="text">Cultivating Green Futures</div>
-        <p class="subtitle">Nurture your garden and track your growth journey with Growfico.</p>
-    </div>
-</div{% endblock %}
+							<div class="relative">
+								<label class="block text-gray-700 text-sm font-medium mb-0">Confirm password</label>
+								<input
+								type="password" id="confirm-password" class="w-full px-0 py-1 border-0 border-b-2 border-gray-200 focus:border-bright-green focus:outline-none transition-colors duration-200 bg-transparent pr-8" placeholder="">
+								<!-- Eye Icon -->
+								<button type="button" onclick="togglePassword('confirm-password')" class="absolute right-0 top-5 text-dark-forest-green hover:text-bright-green  focus:outline-none">
+									<svg id="confirm-password-eye" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0
+																																																		           8.268 2.943 9.542 7-1.274 4.057-5.065
+																																																		           7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+									</svg>
+								</button>
+							</div>
+
+
+							<div class="flex items-start space-x-3 py-3">
+								<input type="checkbox" id="terms" class="mt-1 h-4 w-4 border-gray-300 rounded
+									         text-dark-forest-green focus:ring-dark-forest-green
+									         checked:bg-dark-forest-green checked:border-dark-forest-green"/>
+								<label for="terms" class="text-sm text-gray-600 ">
+									I agree to the
+									<a href="#" class="text-bright-green hover:underline">Terms</a>
+									and
+									<a href="#" class="text-bright-green hover:underline">Privacy Policy</a>.
+								</label>
+							</div>
+
+							<button type="submit" class="w-full bg-bright-green text-white py-4 px-4 rounded-2xl font-bold text-sm hover:bg-opacity-90 transition-all duration-200 mt-4">
+								CREATE ACCOUNT
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		function togglePassword(fieldId) {
+const input = document.getElementById(fieldId);
+const eyeIcon = document.getElementById(fieldId + '-eye');
+
+if (input.type === "password") {
+input.type = "text";
+eyeIcon.innerHTML = `
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+          d="M13.875 18.825A10.05 10.05 0 0112 19
+             c-4.477 0-8.268-2.943-9.542-7
+             a9.956 9.956 0 012.97-4.533M6.219 6.219
+             A9.956 9.956 0 0112 5c4.477 0 8.268 
+             2.943 9.542 7a9.96 9.96 0 01-4.132 
+             5.411M15 12a3 3 0 11-6 0 
+             3 3 0 016 0z" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M3 3l18 18" stroke="#094021" />`;
+} else {
+input.type = "password";
+eyeIcon.innerHTML = `
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+          d="M2.458 12C3.732 7.943 7.523 5 
+             12 5c4.477 0 8.268 2.943 
+             9.542 7-1.274 4.057-5.065 
+             7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+      `;
+}
+}
+	</script>
+{% endblock %}

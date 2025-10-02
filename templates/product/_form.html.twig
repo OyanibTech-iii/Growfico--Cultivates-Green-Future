@@ -1,0 +1,59 @@
+{{ form_start(form, {'attr': {'class': 'space-y-6'}}) }}
+    <div class="bg-white rounded-xl shadow-lg p-6 space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Product Name -->
+            <div class="space-y-2">
+                {{ form_label(form.name, 'Product Name', {'label_attr': {'class': 'block text-base font-semibold text-dark-forest-green'}}) }}
+                {{ form_widget(form.name, {'attr': {'class': 'w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bright-green focus:border-transparent transition-colors duration-200 text-dark-forest-green placeholder-light-gray'}}) }}
+                {{ form_errors(form.name) }}
+            </div>
+
+            <!-- Price -->
+            <div class="space-y-2">
+                {{ form_label(form.price, null, {'label_attr': {'class': 'block text-base font-semibold text-dark-forest-green'}}) }}
+                {{ form_widget(form.price, {'attr': {'class': 'w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bright-green focus:border-transparent transition-colors duration-200 text-dark-forest-green placeholder-light-gray', 'step': '0.01', 'min': '0'}}) }}
+                {{ form_errors(form.price) }}
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div class="space-y-2">
+            {{ form_label(form.description, 'Description', {'label_attr': {'class': 'block text-base font-semibold text-dark-forest-green'}}) }}
+            {{ form_widget(form.description, {'attr': {'class': 'w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bright-green focus:border-transparent transition-colors duration-200 text-dark-forest-green placeholder-light-gray', 'rows': '4'}}) }}
+            {{ form_errors(form.description) }}
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Stock -->
+            <div class="space-y-2">
+                {{ form_label(form.stock, 'Stock Quantity', {'label_attr': {'class': 'block text-base font-semibold text-dark-forest-green'}}) }}
+                {{ form_widget(form.stock, {'attr': {'class': 'w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bright-green focus:border-transparent transition-colors duration-200 text-dark-forest-green placeholder-light-gray', 'min': '0'}}) }}
+                {{ form_errors(form.stock) }}
+            </div>
+
+            <!-- Availability -->
+            <div class="space-y-2">
+                {{ form_label(form.isAvailable, 'Availability', {'label_attr': {'class': 'block text-base font-semibold text-dark-forest-green'}}) }}
+                <div class="flex items-center space-x-4">
+                    {{ form_widget(form.isAvailable, {'attr': {'class': 'w-5 h-5 text-bright-green border-gray-300 rounded focus:ring-bright-green focus:ring-2'}}) }}
+                    <span class="text-base text-light-gray">Available for purchase</span>
+                </div>
+                {{ form_errors(form.isAvailable) }}
+            </div>
+        </div>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-end">
+        <a href="{{ path('app_product_index') }}" 
+           class="inline-flex items-center justify-center px-6 py-3 bg-gray-100 text-dark-forest-green font-semibold rounded-lg hover:bg-gray-200 transition-colors duration-200">
+            <ion-icon name="arrow-back-outline" class="w-4 h-4 mr-2"></ion-icon>
+            Cancel
+        </a>
+        <button type="submit" 
+                class="inline-flex items-center justify-center px-6 py-3 bg-bright-green text-white font-semibold rounded-lg hover:bg-green-600 transition-colors duration-200 shadow-md hover:shadow-lg">
+            <ion-icon name="checkmark-circle-outline" class="w-4 h-4 mr-2"></ion-icon>
+            {{ button_label|default('Save Product') }}
+        </button>
+    </div>
+{{ form_end(form) }}
